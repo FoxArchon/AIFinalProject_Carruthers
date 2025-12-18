@@ -2,6 +2,10 @@
 // You can write your code in this editor
 
 
+
+
+isTrappingPlayer = false;
+
 // this is an addition for the AI so speed does not increase every frame for
 //when the AI is boosting
 

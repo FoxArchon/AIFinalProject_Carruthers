@@ -3,6 +3,111 @@
 
 
 
+//AI tactic that traps player in corner 
+
+//variables for corner trapping tactic for AI
+
+distXWallPlayer = abs(invisWall_obj.x - player_obj.x);
+
+distXWall2Player = abs(invisWall2_obj.x - player_obj.x);
+
+
+
+//only try to trap if aggresive
+
+if(modifiedAIHealth >= player_obj.playerHealth)
+
+{
+
+
+//check if player is near left corner
+if(distXWallPlayer < 20)
+
+{
+	
+	isTrappingPlayer = true;
+	
+	if(isTrappingPlayer == true)
+	
+	{
+	
+	//if yes, move a little farther off in the opposite x direction
+	
+	move_towards_point(player_obj.x + 20 ,y,modifiedAISpeed)
+	
+	//make sure to stop when arriving at point
+	
+	if(x == player_obj.x + 20)
+	{
+		
+		speed = 0;
+		
+		//fire half as many shots that you currently have
+		
+		shotsToTrap = (modifiedAIAmmo % 2);
+		
+		shotCount = 0;
+		
+		if(shotCount < shotsToTrap)
+		{
+			
+			//actual fire
+			var instance = instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y, "Instances", opponentCannon_obj);
+			instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y + 28, "Instances", cannonShotSmoke_obj);
+			audio_play_sound(cannonFire1_snd,1,false);
+			modifiedAIAmmo -= 1;
+			
+			
+			shotCount += 1;
+			
+			//check if enoguh fired
+			if(shotCount = shotsToTrap)
+			{
+				
+				//move directlly across from the player
+	
+				move_towards_point(player_obj.x,y,modifiedAISpeed)
+				
+				if(x == player_obj.x)
+				
+				{
+	
+				//fire any remainding ammmo
+				
+				var instance = instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y, "Instances", opponentCannon_obj);
+				instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y + 28, "Instances", cannonShotSmoke_obj);
+				audio_play_sound(cannonFire1_snd,1,false);
+				modifiedAIAmmo -= 1;
+	
+	
+					if(modifiedAmmo <=0)
+					{
+		
+						isTrappingPlayer = false;
+		
+					}
+				
+				
+				}
+				
+				
+			}
+			
+			
+		}
+		
+		
+	}
+		
+		
+}
+	
+}	
+	
+	
+	
+}
+
 
 
 // This segment is the same code used for player2
@@ -123,6 +228,11 @@ distXWall2 = abs(invisWall2_obj.x - x);
 
 //avoiding left wall
 
+if(isTrappingPlayer == false)
+
+{
+
+
 if(distXWall < 150)
 {
 	
@@ -164,8 +274,13 @@ if(distXWall > 500 && isAvoidingLeftWall == true)
 }
 
 
+}
 
 //avoiding right wall
+
+if(isTrappingPlayer == false)
+
+{
 
 if(distXWall2 < 150)
 {
@@ -209,7 +324,7 @@ if(distXWall2 > 500 && isAvoidingRightWall == true)
 }
 
 
-
+}
 
 
 //AI decision tree for picking an upgrade
