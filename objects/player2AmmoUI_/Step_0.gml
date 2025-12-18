@@ -3,7 +3,7 @@
 
 
 
-if ( player2_obj.player2Ammo == 5)
+if ( modifiedAI_obj.modifiedAIAmmo == 5)
 {
 	
 	sprite_index = ammoUI6_spr;
@@ -11,7 +11,7 @@ if ( player2_obj.player2Ammo == 5)
 }
 
 
-else if (player2_obj.player2Ammo == 4)
+else if (modifiedAI_obj.modifiedAIAmmo == 4)
 {
 	
 	
@@ -20,7 +20,7 @@ else if (player2_obj.player2Ammo == 4)
 	
 }
 
-else if (player2_obj.player2Ammo == 3)
+else if (modifiedAI_obj.modifiedAIAmmo == 3)
 {
 	
 	
@@ -29,7 +29,7 @@ else if (player2_obj.player2Ammo == 3)
 	
 }
 
-else if (player2_obj.player2Ammo == 2 )
+else if (modifiedAI_obj.modifiedAIAmmo == 2 )
 {
 	
 	
@@ -38,7 +38,7 @@ else if (player2_obj.player2Ammo == 2 )
 	
 }
 
-else if (player2_obj.player2Ammo == 1)
+else if (modifiedAI_obj.modifiedAIAmmo == 1)
 {
 	
 	
@@ -47,7 +47,7 @@ else if (player2_obj.player2Ammo == 1)
 	
 }
 
-else if (player2_obj.player2Ammo <= 0 )
+else if (modifiedAI_obj.modifiedAIAmmo <= 0 )
 {
 	
 	
