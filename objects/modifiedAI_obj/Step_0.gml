@@ -343,90 +343,100 @@ if(distXWall2 > 500 && isAvoidingRightWall == true)
 //upgrades above it in the hierchy. It is is goofy because health will require 5 checks in the if
 //statement to make sure it does not want anything else
 
-if(object_exists(upgrade5_obj))
+if(instance_exists(upgrade5_obj) and aiHasMissleLauncher == false)
 {
 	
-	if(aiHasMissleLauncher == false)
+	show_debug_message("missle object exists");
 	
-	{
+	
+		show_debug_message("has missle object false");
 	
 		aiWantsMissleLauncher = true;
 	
-	}
+		
 	
 }
 
 
 
-if(object_exists(upgrade6_obj))
+else if(instance_exists(upgrade6_obj) and aiHasHook == false)
 {
 	
+		show_debug_message("hook object exists");
 	
-	if(aiHasHook == false )
-	{
-		
+				
+		show_debug_message("has hook object false");
 		aiWantsHook = true;
 	
-	}
+
 	
 }
 
 
-if(object_exists(upgrade4_obj))
+else if(instance_exists(upgrade4_obj) and aiHasLaser == false)
 {
 	
+		show_debug_message("laser object exists");
 	
-	if(aiHasLaser == false)
-	
-	{
+		
+		show_debug_message("has laser object false");
 	
 		aiWantsLaser = true;
 	
-	}
 	
 }
 
 
-if(object_exists(upgrade2_obj))
+else if(instance_exists(upgrade2_obj) and aiHasOneSpeed == false)
 {
 	
+		show_debug_message("speed object exists");
 	
-	if(aiHasOneSpeed == false)
-	
-	{
-	
-		aiWantsSpeed = true;
-	
-	}
-	
-}
-
-if(object_exists(upgrade1_obj))
-{
-	
-	
-	if(aiHasOneDamage == false)
-	
-	{
-	
-		aiWantsDamage = true;
-	
-	}
 		
 	
+		show_debug_message("has speed object false");
+		aiWantsSpeed = true;
+	
+	
+	
+}
+
+else if(instance_exists(upgrade1_obj) and aiHasOneDamage == false)
+{
+	
+		show_debug_message("damage object exists");
+	
+	
+		
+		show_debug_message("has damage object false");
+		aiWantsDamage = true;
+	
+			
+	
 }
 
 
-if(object_exists(upgrade3_obj))
+else if(instance_exists(upgrade3_obj) and aiHasOneHealth == false)
 {
 	
-	if(aiHasOneHealth == false)
+		show_debug_message("health object exists");
 	
-	{
 	
+		show_debug_message("has health object false");
 		aiWantsHealth = true;
 	
-	}
+	
+	
+}
+
+
+else
+
+{
+	
+	
+	
+	
 	
 }
 
