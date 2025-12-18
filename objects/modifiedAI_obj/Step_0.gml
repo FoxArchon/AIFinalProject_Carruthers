@@ -3,110 +3,112 @@
 
 
 
-//AI tactic that traps player in corner 
+////AI tactic that traps player in corner 
 
-//variables for corner trapping tactic for AI
+////variables for corner trapping tactic for AI
 
-distXWallPlayer = abs(invisWall_obj.x - player_obj.x);
+//distXWallPlayer = abs(invisWall_obj.x - player_obj.x);
 
-distXWall2Player = abs(invisWall2_obj.x - player_obj.x);
-
-
-
-//only try to trap if aggresive
-
-if(modifiedAIHealth >= player_obj.playerHealth)
-
-{
+//distXWall2Player = abs(invisWall2_obj.x - player_obj.x);
 
 
-//check if player is near left corner
-if(distXWallPlayer < 20)
 
-{
+////only try to trap if aggresive
+
+//if(modifiedAIHealth >= player_obj.playerHealth)
+
+//{
+
+
+////check if player is near left corner
+//if(distXWallPlayer < 10)
+
+//{
 	
-	isTrappingPlayer = true;
+//	isTrappingPlayer = true;
 	
-	if(isTrappingPlayer == true)
+//	if(isTrappingPlayer == true)
 	
-	{
+//	{
 	
-	//if yes, move a little farther off in the opposite x direction
+//	//if yes, move a little farther off in the opposite x direction
 	
-	move_towards_point(player_obj.x + 20 ,y,modifiedAISpeed)
+//	move_towards_point(player_obj.x + 10 ,y,modifiedAISpeed)
 	
-	//make sure to stop when arriving at point
+//	//make sure to stop when arriving at point
 	
-	if(x == player_obj.x + 20)
-	{
+//	if(x == player_obj.x + 20)
+//	{
 		
-		speed = 0;
+//		modifiedAISpeed = 0;
 		
-		//fire half as many shots that you currently have
+//		//fire half as many shots that you currently have
 		
-		shotsToTrap = (modifiedAIAmmo % 2);
+//		shotsToTrap = (modifiedAIAmmo % 2);
 		
-		shotCount = 0;
+//		shotCount = 0;
 		
-		if(shotCount < shotsToTrap)
-		{
+//		if(shotCount < shotsToTrap)
+//		{
 			
-			//actual fire
-			var instance = instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y, "Instances", opponentCannon_obj);
-			instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y + 28, "Instances", cannonShotSmoke_obj);
-			audio_play_sound(cannonFire1_snd,1,false);
-			modifiedAIAmmo -= 1;
-			
-			
-			shotCount += 1;
-			
-			//check if enoguh fired
-			if(shotCount = shotsToTrap)
-			{
-				
-				//move directlly across from the player
-	
-				move_towards_point(player_obj.x,y,modifiedAISpeed)
-				
-				if(x == player_obj.x)
-				
-				{
-	
-				//fire any remainding ammmo
-				
-				var instance = instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y, "Instances", opponentCannon_obj);
-				instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y + 28, "Instances", cannonShotSmoke_obj);
-				audio_play_sound(cannonFire1_snd,1,false);
-				modifiedAIAmmo -= 1;
-	
-	
-					if(modifiedAmmo <=0)
-					{
-		
-						isTrappingPlayer = false;
-		
-					}
-				
-				
-				}
-				
-				
-			}
+//			//actual fire
+//			var instance = instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y, "Instances", opponentCannon_obj);
+//			instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y + 28, "Instances", cannonShotSmoke_obj);
+//			audio_play_sound(cannonFire1_snd,1,false);
+//			modifiedAIAmmo -= 1;
 			
 			
-		}
+//			shotCount += 1;
+			
+//			//check if enoguh fired
+//			if(shotCount = shotsToTrap)
+//			{
+				
+//				//move directlly across from the player
+	
+//				move_towards_point(player_obj.x,y,modifiedAISpeed)
+				
+//				if(x == player_obj.x)
+				
+//				{
+					
+//				modifiedAISpeed = 0;
+	
+//				//fire any remainding ammmo
+				
+//				var instance = instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y, "Instances", opponentCannon_obj);
+//				instance_create_layer(modifiedAI_obj.x,modifiedAI_obj.y + 28, "Instances", cannonShotSmoke_obj);
+//				audio_play_sound(cannonFire1_snd,1,false);
+//				modifiedAIAmmo -= 1;
+	
+	
+//					if(modifiedAmmo <=0)
+//					{
+		
+//						isTrappingPlayer = false;
+		
+//					}
+				
+				
+//				}
+				
+				
+//			}
+			
+			
+//		}
 		
 		
-	}
+//	}
 		
 		
-}
+//}
 	
-}	
+//}	
 	
 	
 	
-}
+//}
 
 
 
