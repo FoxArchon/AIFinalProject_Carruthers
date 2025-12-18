@@ -245,7 +245,7 @@ if(object_exists(upgrade6_obj))
 {
 	
 	
-	if(aiHasHook == false and aiWantsMissleLauncher == false)
+	if(aiHasHook == false )
 	{
 		
 		aiWantsHook = true;
@@ -259,7 +259,7 @@ if(object_exists(upgrade4_obj))
 {
 	
 	
-	if(aiHasLaser == false and aiWantsMissleLauncher == false and aiWantsHook == false)
+	if(aiHasLaser == false)
 	
 	{
 	
@@ -274,7 +274,7 @@ if(object_exists(upgrade2_obj))
 {
 	
 	
-	if(aiHasOneSpeed == false and aiWantsMissleLauncher == false and aiWantshook == false and aiWantsLaser == false )
+	if(aiHasOneSpeed == false)
 	
 	{
 	
@@ -288,7 +288,7 @@ if(object_exists(upgrade1_obj))
 {
 	
 	
-	if(aiHasOneDamage == false and aiWantsMissleLauncher == false and aiWantshook == false and aiWantsLaser == false and aiWantsSpeed == false )
+	if(aiHasOneDamage == false)
 	
 	{
 	
@@ -303,7 +303,7 @@ if(object_exists(upgrade1_obj))
 if(object_exists(upgrade3_obj))
 {
 	
-	if(aiHasOneHealth == false  and aiWantsMissleLauncher == false and aiWantshook == false and aiWantsLaser == false and aiWantsSpeed == false and aiWantsDamage == false)
+	if(aiHasOneHealth == false)
 	
 	{
 	
