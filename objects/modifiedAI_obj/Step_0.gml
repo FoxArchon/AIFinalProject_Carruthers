@@ -216,10 +216,15 @@ if(distXWall2 > 500 && isAvoidingRightWall == true)
 
 
 //checks if the option even exists, as the options given are randomized,
-//checks if the AI already has the upgrade, then if not, it wants it
+//checks if the AI already has the upgrade amd of it doesnt want any others,
+//in priority,then if not, it wants it
 
 //tried to make it so it has a priority list at first but it seems to
-//be a random pick right excpet for the missle launcher, but it works so im keeping it
+//be a random pick right excpet for the missle launcher maybe, but it works so im keeping it
+
+//I found a goofy way of making it work by adding conditoons that it does not want any 
+//upgrades above it in the hierchy. It is is goofy because health will require 5 checks in the if
+//statement to make sure it does not want anything else
 
 if(object_exists(upgrade5_obj))
 {
@@ -240,7 +245,7 @@ if(object_exists(upgrade6_obj))
 {
 	
 	
-	if(aiHasHook == false)
+	if(aiHasHook == false and aiWantsMissleLauncher == false)
 	{
 		
 		aiWantsHook = true;
@@ -254,7 +259,7 @@ if(object_exists(upgrade4_obj))
 {
 	
 	
-	if(aiHasLaser == false)
+	if(aiHasLaser == false and aiWantsMissleLauncher == false and aiWantshook == false)
 	
 	{
 	
@@ -269,7 +274,7 @@ if(object_exists(upgrade2_obj))
 {
 	
 	
-	if(aiHasOneSpeed == false)
+	if(aiHasOneSpeed == false and aiWantsMissleLauncher == false and aiWantshook == false and aiWantsLaser == false )
 	
 	{
 	
